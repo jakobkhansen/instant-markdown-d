@@ -75,8 +75,12 @@ if (argv.mathjax) md.use(require('markdown-it-mathjax')());
 if (argv.mermaid) md.use(require('markdown-it-textual-uml'));
 
 const mjPageConfig = {
-  format: ["TeX"],
-  cssInline: false,
+    format: ["TeX"],
+    cssInline: false,
+    singleDollars: true,
+    MathJax: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
 };
 
 if (process.env.INSTANT_MARKDOWN_MATHJAX_FONTS) {
